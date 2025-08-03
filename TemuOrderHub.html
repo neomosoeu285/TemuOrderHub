@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temu Order Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {font-family: Arial, sans-serif; background: #1e1e1e; color: #f1f1f1; text-align: center; padding: 40px;}
+    h1 {color: #ff7f32;}
+    .btn {display: block; width: 80%; margin: 15px auto; padding: 15px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; color: white; transition: background 0.3s ease, transform 0.2s ease;}
+    .btn:hover {transform: scale(1.05); opacity: 0.9;}
+    .temu-btn {background: #ff7f32;}
+    form {background: #2c2c2c; padding: 20px; border-radius: 10px; width: 90%; max-width: 400px; margin: 20px auto; box-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+    input, textarea {width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #444; border-radius: 5px; background: #3c3c3c; color: #f1f1f1;}
+    input[type=file] {border: none; background: none;}
+    button {background: #28a745; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; transition: background 0.3s ease, transform 0.2s ease;}
+    button:hover {background: #34c759; transform: scale(1.05);}
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Your Temu Order Hub</h1>
+  <p>Shop on Temu and place your order here. Easy!</p>
+
+  <a class="btn temu-btn" href="https://www.temu.com" target="_blank">Shop on Temu</a>
+
+  <!-- ✅ Simple Order Form (sends directly to Formspree) -->
+  <form action="https://formspree.io/f/xgvzldbr" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="contact" placeholder="WhatsApp/Phone (optional)">
+    <input type="url" name="product" placeholder="Temu Product Link" required>
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <input type="file" name="screenshot" accept="image/*" required>
+    <textarea name="notes" placeholder="Any notes..."></textarea>
+
+    <!-- Hidden Inputs for Email Formatting -->
+    <input type="hidden" name="_subject" value="New Temu Order">
+    <input type="hidden" name="_template" value="table">
+
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <p style="margin-top:20px; color:#bbb;">Your order will be emailed to us directly.</p>
+
+</body>
+</html>
